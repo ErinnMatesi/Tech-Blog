@@ -1,0 +1,3 @@
+-- name database
+DROP DATABASE IF EXISTS ;
+CREATE DATABASE ;
