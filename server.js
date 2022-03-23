@@ -1,8 +1,7 @@
 // CHECK ALL OF THIS
-
+// import dependencies
 const path = require('path');
 const express = require('express');
-// Import express-session
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 
@@ -22,6 +21,7 @@ const sess = {
 
 app.use(session(sess));
 
+// this might not be needed if I don't use the helpers file
 const hbs = exphbs.create({ helpers });
 
 app.engine('handlebars', hbs.engine);
