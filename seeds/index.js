@@ -1,15 +1,21 @@
-// CHANGE THIS TO MATCH WHATEVER I AM SEEDING
+const seedUsers = require('./user-seeds');
+const seedPosts = require('./post-seeds');
+const seedComments = require('./comment-seeds');
 
 const sequelize = require('../config/connection');
-// const seedGallery = require('./galleryData');
-// const seedPaintings = require('./paintingData');
 
 const seedAll = async () => {
-  await sequelize.sync({  });
+  await sequelize.sync({ force: true });
+  console.log('\n----- DATABASE SYNCED -----\n');
 
-//   await seedGallery();
+  await seedUsers();
+  console.log('\n----- USERS SEEDED -----\n');
 
-//   await seedPaintings();
+  await seedPosts();
+  console.log('\n----- POSTS SEEDED -----\n');
+
+  await seedComments();
+  console.log('\n----- COMMENTS SEEDED -----\n');
 
   process.exit(0);
 };
