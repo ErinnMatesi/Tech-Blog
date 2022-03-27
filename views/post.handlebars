@@ -1,1 +1,27 @@
 {{!-- this view will show when they select a particular blog post on the main page (GET/:id) --}}
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>{{title}}</h1>
+        <p>{{content}}</p>
+        <p>By: {{user_id}}</p>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+          {{#each comment}}
+          {{> comment-details}}
+          {{/each}}
+        </ul>
+      </div>
+      <form>
+        <div class="mb-3">
+          <label for="commentInput" class="form-label">Leave a Comment</label>
+          <input type="input" class="form-control" id="commentInput">
+        </div>
+        {{!-- how to I trigger POST on button click? --}}
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
