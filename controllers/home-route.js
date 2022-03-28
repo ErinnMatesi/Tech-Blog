@@ -24,4 +24,46 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/login', async (req, res) => {
+  try {
+
+    res.render('login')
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err)
+  }
+});
+
+router.get('/posts/:id', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username']
+        },
+        {
+          model: Comment,
+          include: [{
+            model: User,
+            attributes: ['username']
+          }],
+          attributes: ['content']
+        }
+      ]
+    });
+// do I need to break it down like this?
+    const post = postData.get({ plain: true });
+    console.log(post);
+    res.render('post', {
+      post,
+      loggedIn: req.session.loggedIn,
+    });
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err)
+  }
+});
+
 module.exports = router;

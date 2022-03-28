@@ -1,7 +1,7 @@
 <section class="flex-row justify-center">
   {{!-- this will need to only pull the user's post, should this be done through a helper or by the route? --}}
   <h2>My Posts</h2>
-  {{#each post}}
+  {{#each posts}}
   {{> post-details}}
   {{/each}}
   {{!-- add edit and delete options --}}
@@ -13,4 +13,5 @@
       {{/each}}
     </ul>
   </div>
+  {{!-- add post.js and form for post creation/input --}}
 </section>

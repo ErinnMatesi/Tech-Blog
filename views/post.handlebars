@@ -3,25 +3,28 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1>{{title}}</h1>
-        <p>{{content}}</p>
-        <p>By: {{user_id}}</p>
+        <h1>{{post.title}}</h1>
+        <p>{{post.content}}</p>
+        <p>By: {{post.user.username}}</p>
       </div>
       <div class="card" style="width: 18rem;">
         <ul class="list-group list-group-flush">
-          {{#each comment}}
+          {{#each post.comments}}
           {{> comment-details}}
           {{/each}}
         </ul>
       </div>
-      <form>
+      <form class="comment-form">
         <div class="mb-3">
           <label for="commentInput" class="form-label">Leave a Comment</label>
           <input type="input" class="form-control" id="commentInput">
         </div>
         {{!-- how to I trigger POST on button click? --}}
+        {{!-- add comment.js --}}
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
   </div>
 </section>
+
+<script src="/js/comment.js"></script>

@@ -2,8 +2,20 @@ const router = require('express').Router();
 // import models needed - may not need User/Comments ?
 const { User, Post, Comment } = require('../models');
 
-router.get('/:id', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
+    const postData = await Post.findByPk(user_id, {
+      include: [
+        {
+          // is this right?
+          model: Post,
+        },
+        {
+          model: Comment,
+        }
+      ]
+    });
+
 
   } catch (err) {
     console.log(err);

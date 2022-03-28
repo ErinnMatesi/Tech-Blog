@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./../../public/css/reset.css">
     <link rel="stylesheet" href="./../../public/css/style.css">
-    <title>Blog</title>
+    <title>Tech Blog</title>
 </head>
 <body>
     <header > 
         <nav>
             <ul> 
-                <li><a href="/home">Home</a></li>
+                <li><a href="/">Home</a></li>
                 {{#if loggedIn}}
                 <li><a href="/dashboard">Dashboard</a></li> 
-                <button id="signOut">Sign Out</button>
-                {{else}} 
+                <li><a href="/logout">Sign Out</a></li>
                 {{else}}
-                <li><a href="/signIn">Sign In</a></li>
+                <li><a href="/login">Sign In/Create Account</a></li>
                 {{/if}}
             </ul>
         </nav>
