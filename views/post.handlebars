@@ -7,6 +7,7 @@
         <p>{{post.content}}</p>
         <p>By: {{post.user.username}}</p>
       </div>
+      {{!-- shows comments --}}
       <div class="card" style="width: 18rem;">
         <ul class="list-group list-group-flush">
           {{#each post.comments}}
@@ -14,13 +15,12 @@
           {{/each}}
         </ul>
       </div>
+      {{!-- allows comment input --}}
       <form class="comment-form">
         <div class="mb-3">
           <label for="commentInput" class="form-label">Leave a Comment</label>
           <input type="input" class="form-control" id="commentInput">
         </div>
-        {{!-- how to I trigger POST on button click? --}}
-        {{!-- add comment.js --}}
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>

@@ -8,10 +8,18 @@
   <h2>My Comments</h2>
   <div class="card" style="width: 18rem;">
     <ul class="list-group list-group-flush">
-      {{#each comment}}
+      {{#each comments}}
       {{> comment-details}}
       {{/each}}
     </ul>
   </div>
-  {{!-- add post.js and form for post creation/input --}}
+  <form class="post-form">
+    <div class="mb-3">
+      <label for="postInput" class="form-label">Add New Post</label>
+      <input type="input" class="form-control" id="postInput">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </section>
+{{!-- add post.js to handle submissions --}}
+<script src="/js/post.js"></script>

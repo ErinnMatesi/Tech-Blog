@@ -6,7 +6,8 @@
     <a href="/posts/{{id}}" class="card-link">View Post</a>
     <p class="card-text">{{createdAt}}</p>
     {{#if loggedIn}}
-    {{!-- check these button types --}}
+    {{!-- build the js for this --}}
+    {{!-- or make it an anchor and redirect to the put/delete routes in api/post --}}
     <button type="submit" class="btn btn-primary">Edit</button>
     <button type="submit" class="btn btn-primary">Delete</button>
     {{/if}}
