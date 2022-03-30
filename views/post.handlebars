@@ -7,6 +7,13 @@
         <p>{{post.content}}</p>
         <p>By: {{post.user.username}}</p>
       </div>
+      {{!-- allows delete or edit --}}
+      {{#if loggedIn}}
+      {{!-- build the js for this --}}
+      {{!-- or make it an anchor and redirect to the put/delete routes in api/post --}}
+      {{!-- <button type="submit" class="btn btn-primary">Edit</button> --}}
+      {{!-- <button type="delete" class="btn btn-primary">Delete</button> --}}
+      {{/if}}
       {{!-- shows comments --}}
       <div class="card" style="width: 18rem;">
         <ul class="list-group list-group-flush">

@@ -1,5 +1,4 @@
 const router = require('express').Router();
-// import models needed - may not need Comment
 const { User, Post, Comment } = require('../models');
 
 router.get('/', async (req, res) => {
@@ -17,6 +16,7 @@ router.get('/', async (req, res) => {
 
     res.render('homepage', {
       posts,
+      loggedIn: req.session.loggedIn
     })
   } catch (err) {
     console.log(err);
@@ -52,7 +52,7 @@ router.get('/posts/:id', async (req, res) => {
         }
       ]
     });
-// do I need to break it down like this?
+
     const post = postData.get({ plain: true });
     console.log(post);
     res.render('post', {

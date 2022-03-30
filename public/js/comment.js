@@ -11,8 +11,8 @@ const submitComment = async (event) => {
       body: JSON.stringify({ content, post_id }),
       headers: { 'Content-Type': 'application/json' },
     });
-    const results = await response.json();
-    console.log(results);
+    // const results = await response.json();
+    // console.log(results);
     if (response.ok) {
       document.location.replace('/');
     } else {

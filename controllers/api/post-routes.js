@@ -2,37 +2,13 @@ const router = require('express').Router();
 // import models needed - may not need User/Comments
 const { User, Post, Comment } = require('../../models');
 
-// router.get('/:id', async (req, res) => {
-//   try {
-//     const postData = await Post.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['username']
-//         },
-//         {
-//           model: Comment,
-//           attributes: ['content', 'username']
-//         }
-//       ]
-//     });
-// // do I need to break it down like this?
-//     const post = postData.get({ plain: true });
-//     console.log('post')
-//     res.render('post', {
-//       post,
-//       loggedIn: req.session.loggedIn,
-//     });
-
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err)
-//   }
-// });
 
 router.post('/', async (req, res) => {
   try {
-
+    const userId = req.session.userId;
+    const post = await Post.create({...req.body, user_id: userId});
+    // console.log(post);
+    // res.status(200).json(post);  
   } catch (err) {
     console.log(err);
     res.status(500).json(err)
