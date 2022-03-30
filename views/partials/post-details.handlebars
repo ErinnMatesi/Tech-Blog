@@ -1,9 +1,11 @@
 {{!-- create post cards that will show on the homepage --}}
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{title}}</h5>
-    <p class="card-text">{{cutString content}}...</p>
-    <a href="/posts/{{id}}" class="card-link">View Post</a>
-    <p class="card-text">{{createdAt}}</p>
+{{!-- <div class="col"> --}}
+  <div class="card border-dark text-dark bg-info" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{title}}</h5>
+      <p class="card-text">{{cutString content}}...</p>
+      <a href="/posts/{{id}}" class="card-link">View Post</a>
+      <p class="card-text">{{createdAt}}</p>
+    </div>
   </div>
-</div>
+{{!-- </div> --}}
