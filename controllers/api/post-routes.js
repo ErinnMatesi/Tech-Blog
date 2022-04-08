@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
     const userId = req.session.userId;
     const post = await Post.create({...req.body, user_id: userId});
     // console.log(post);
-    // res.status(200).json(post);  
+    res.json(post);  
   } catch (err) {
     console.log(err);
     res.status(500).json(err)

@@ -15,7 +15,8 @@ const submitPost = async (event) => {
     // const results = await response.json();
     // console.log(results);
     if (response.ok) {
-      document.location.replace('/');
+      // document.location.replace('/');
+      console.log(response);
     } else {
       alert('Failed to save post.');
     }
