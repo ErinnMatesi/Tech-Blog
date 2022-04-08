@@ -12,10 +12,24 @@ const submitPost = async (event) => {
       body: JSON.stringify({ title, content, post_id }),
       headers: { 'Content-Type': 'application/json' },
     });
-    // const results = await response.json();
-    // console.log(results);
+    
     if (response.ok) {
-      document.location.replace('/');
+      const results = await response.json();
+      console.log(results);
+      const newPost = `<div class="col">
+      <div class="card border-dark text-dark bg-info" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">${results.title}</h5>
+          <p class="card-text">${results.content}</p>
+          <a href="/posts/${results.id}" class="card-link">View Post</a>
+          <p class="card-text">${results.createdAt}</p>
+        </div>
+      </div>
+    </div>`
+    const something = document.createElement('div');
+    something.innerHTML = newPost;
+    const postContainer = document.querySelector('.posts');
+    postContainer.append(something);
     } else {
       alert('Failed to save post.');
     }

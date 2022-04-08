@@ -7,7 +7,7 @@ router.post('/', async (req, res) => {
     const userId = req.session.userId;
     const comment = await Comment.create({...req.body, user_id: userId});
     // console.log(comment);
-    // res.status(200).json(comment);
+    res.json(comment);
   } catch (err) {
     console.log(err);
     res.status(500).json(err)

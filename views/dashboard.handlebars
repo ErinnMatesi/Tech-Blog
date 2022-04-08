@@ -1,14 +1,16 @@
 <section class="flex-row justify-center">
   {{!-- this will need to only pull the user's post, should this be done through a helper or by the route? --}}
   <h2>My Posts</h2>
-  {{#each posts}}
+  <div class="posts">
+  {{#each data.posts}}
   {{> post-details}}
   {{/each}}
+  </div>
   {{!-- add edit and delete options --}}
   <h2>My Comments</h2>
   <div class="card" style="width: 18rem;">
     <ul class="list-group list-group-flush">
-      {{#each comments}}
+      {{#each data.comments}}
       {{> comment-details}}
       {{/each}}
     </ul>
