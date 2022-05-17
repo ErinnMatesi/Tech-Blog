@@ -1,3 +1,7 @@
 nav {
   padding: 20x;
 }
+
+main {
+  margin-left: 50px !important;
+}

@@ -4,12 +4,4 @@ module.exports = {
     let trimmedString = aString.substring(0, length);
     return trimmedString;
   },
-
-  // pullUserPosts: (user)=> {
-
-  // },
-
-  // pullUserComments: (user)=> {
-
-  // }
 };
