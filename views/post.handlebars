@@ -6,14 +6,13 @@
         <h1>{{post.title}}</h1>
         <p>{{post.content}}</p>
         <p>By: {{post.user.username}}</p>
+        {{#if loggedIn}}
+      {{!-- <button type="submit" class="btn btn-primary">Edit</button> --}}
+      <button class="btn btn-danger delete-post"><i class="fas fa-trash"></i></button>
+      {{/if}}
       </div>
       {{!-- allows delete or edit --}}
-      {{#if loggedIn}}
-      {{!-- build the js for this --}}
-      {{!-- or make it an anchor and redirect to the put/delete routes in api/post --}}
-      {{!-- <button type="submit" class="btn btn-primary">Edit</button> --}}
-      {{!-- <button type="delete" class="btn btn-primary">Delete</button> --}}
-      {{/if}}
+      
       {{!-- shows comments --}}
       <div class="card" style="width: 18rem;">
         <ul class="list-group list-group-flush">
@@ -35,3 +34,4 @@
 </section>
 
 <script src="/js/comment.js"></script>
+<script src="/js/delete.js"></script>

@@ -8,7 +8,6 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Post,
-          attributes: ['content', 'createdAt'],
         },
         {
           model: Comment,
