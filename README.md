@@ -15,6 +15,8 @@ https://erinnstechblog.herokuapp.com/
 * HTML
 * CSS
 * Bootstrap
+* Express
+* Node
 * MySQL
 * Sequelize
 * Heroku
