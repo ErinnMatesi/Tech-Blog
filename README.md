@@ -5,6 +5,7 @@ A fullstack blog app that allows user to login and execute CRUD methods on posts
 
 ## Deployed Site
 https://erinnstechblog.herokuapp.com/
+![screenshot](./public/screenshot.PNG)
 
 ## Table of Contents
 * [Technologies](#technologies)
