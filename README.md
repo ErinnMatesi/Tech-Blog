@@ -1,18 +1,27 @@
-# MVC Tech Blog
+# Tech Blog
 
 ## Description
-A blog site where users can post and discuss current tech trends.
+A fullstack blog app that allows user to login and execute CRUD methods on posts and comments.
 
 ## Deployed Site
 https://erinnstechblog.herokuapp.com/
 
 ## Table of Contents
+* [Technologies](#technologies)
 * [Usage](#usage)
 * [Questions](#questions)
 
-## Usage
-Create an account to access your dashboard and write new blog posts.
+## Technologies
+* HTML
+* CSS
+* Bootstrap
+* MySQL
+* Sequelize
+* Heroku
+* JawsDB
 
+## Usage
+Create an account to access your dashboard where you can write new blog posts and comment on others' posts.
 
 ---
 ### Questions
